@@ -1,0 +1,1768 @@
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (0.3ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (183.6ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (165.4ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (1.6ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Migrating to CreateHosts (20130222223230)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (4.4ms)[0m  CREATE TABLE "hosts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "ref" varchar(255), "name" varchar(255), "address" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (2.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20130222223230')[0m
+  [1m[35m (145.5ms)[0m  commit transaction
+Migrating to CreateRooms (20130222223320)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (3.9ms)[0m  CREATE TABLE "rooms" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "ref" varchar(255), "host_ref" varchar(255), "capacity" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (1.5ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20130222223320')[0m
+  [1m[35m (128.5ms)[0m  commit transaction
+Migrating to CreateBookings (20130222223417)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (4.2ms)[0m  CREATE TABLE "bookings" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "ref" varchar(255), "room_ref" varchar(255), "start_date" date, "end_date" date, "number_of_guests" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (4.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20130222223417')[0m
+  [1m[35m (147.2ms)[0m  commit transaction
+  [1m[36m (1.4ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at Fri Feb 22 22:35:18 +0000 2013
+Connecting to database specified by database.yml
+Served asset /rails.png - 304 Not Modified (41ms)
+
+
+Started GET "/hosts" for 127.0.0.1 at Fri Feb 22 22:35:23 +0000 2013
+Processing by HostsController#index as HTML
+  [1m[36mHost Load (0.8ms)[0m  [1mSELECT "hosts".* FROM "hosts" [0m
+  Rendered hosts/index.html.erb within layouts/application (21.6ms)
+Compiled bookings.css  (23ms)  (pid 24239)
+Compiled hosts.css  (14ms)  (pid 24239)
+Compiled rooms.css  (7ms)  (pid 24239)
+Compiled scaffolds.css  (147ms)  (pid 24239)
+Compiled application.css  (373ms)  (pid 24239)
+Compiled jquery.js  (12ms)  (pid 24239)
+Compiled jquery_ujs.js  (1ms)  (pid 24239)
+Compiled bookings.js  (224ms)  (pid 24239)
+Compiled hosts.js  (194ms)  (pid 24239)
+Compiled rooms.js  (205ms)  (pid 24239)
+Compiled application.js  (1055ms)  (pid 24239)
+Completed 200 OK in 2324ms (Views: 2155.5ms | ActiveRecord: 14.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at Fri Feb 22 22:35:26 +0000 2013
+Served asset /application.css - 304 Not Modified (33ms)
+
+
+Started GET "/assets/bookings.css?body=1" for 127.0.0.1 at Fri Feb 22 22:35:26 +0000 2013
+Served asset /bookings.css - 304 Not Modified (12ms)
+
+
+Started GET "/assets/hosts.css?body=1" for 127.0.0.1 at Fri Feb 22 22:35:26 +0000 2013
+Served asset /hosts.css - 304 Not Modified (8ms)
+
+
+Started GET "/assets/rooms.css?body=1" for 127.0.0.1 at Fri Feb 22 22:35:26 +0000 2013
+Served asset /rooms.css - 304 Not Modified (9ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at Fri Feb 22 22:35:26 +0000 2013
+Served asset /scaffolds.css - 304 Not Modified (8ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at Fri Feb 22 22:35:26 +0000 2013
+Served asset /jquery.js - 304 Not Modified (18ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at Fri Feb 22 22:35:26 +0000 2013
+Served asset /jquery_ujs.js - 304 Not Modified (10ms)
+
+
+Started GET "/assets/bookings.js?body=1" for 127.0.0.1 at Fri Feb 22 22:35:26 +0000 2013
+Served asset /bookings.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/hosts.js?body=1" for 127.0.0.1 at Fri Feb 22 22:35:26 +0000 2013
+Served asset /hosts.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/rooms.js?body=1" for 127.0.0.1 at Fri Feb 22 22:35:26 +0000 2013
+Served asset /rooms.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at Fri Feb 22 22:35:26 +0000 2013
+Served asset /application.js - 304 Not Modified (29ms)
+
+
+Started GET "/hosts/new" for 127.0.0.1 at Fri Feb 22 22:35:29 +0000 2013
+Processing by HostsController#new as HTML
+  Rendered hosts/_form.html.erb (22.0ms)
+  Rendered hosts/new.html.erb within layouts/application (65.1ms)
+Completed 200 OK in 121ms (Views: 112.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at Fri Feb 22 22:35:29 +0000 2013
+Served asset /application.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/bookings.css?body=1" for 127.0.0.1 at Fri Feb 22 22:35:29 +0000 2013
+Served asset /bookings.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/hosts.css?body=1" for 127.0.0.1 at Fri Feb 22 22:35:29 +0000 2013
+Served asset /hosts.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at Fri Feb 22 22:35:29 +0000 2013
+Served asset /scaffolds.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/rooms.css?body=1" for 127.0.0.1 at Fri Feb 22 22:35:29 +0000 2013
+Served asset /rooms.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at Fri Feb 22 22:35:29 +0000 2013
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at Fri Feb 22 22:35:29 +0000 2013
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bookings.js?body=1" for 127.0.0.1 at Fri Feb 22 22:35:29 +0000 2013
+Served asset /bookings.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/hosts.js?body=1" for 127.0.0.1 at Fri Feb 22 22:35:29 +0000 2013
+Served asset /hosts.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/rooms.js?body=1" for 127.0.0.1 at Fri Feb 22 22:35:29 +0000 2013
+Served asset /rooms.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at Fri Feb 22 22:35:29 +0000 2013
+Served asset /application.js - 304 Not Modified (88ms)
+
+
+Started GET "/rooms" for 127.0.0.1 at Fri Feb 22 22:35:37 +0000 2013
+Processing by RoomsController#index as HTML
+  [1m[35mRoom Load (0.9ms)[0m  SELECT "rooms".* FROM "rooms" 
+  Rendered rooms/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 44ms (Views: 36.3ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at Fri Feb 22 22:35:37 +0000 2013
+Served asset /application.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/hosts.css?body=1" for 127.0.0.1 at Fri Feb 22 22:35:37 +0000 2013
+Served asset /hosts.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bookings.css?body=1" for 127.0.0.1 at Fri Feb 22 22:35:37 +0000 2013
+Served asset /bookings.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/rooms.css?body=1" for 127.0.0.1 at Fri Feb 22 22:35:37 +0000 2013
+Served asset /rooms.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at Fri Feb 22 22:35:37 +0000 2013
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at Fri Feb 22 22:35:37 +0000 2013
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at Fri Feb 22 22:35:37 +0000 2013
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bookings.js?body=1" for 127.0.0.1 at Fri Feb 22 22:35:37 +0000 2013
+Served asset /bookings.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/hosts.js?body=1" for 127.0.0.1 at Fri Feb 22 22:35:37 +0000 2013
+Served asset /hosts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/rooms.js?body=1" for 127.0.0.1 at Fri Feb 22 22:35:37 +0000 2013
+Served asset /rooms.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at Fri Feb 22 22:35:37 +0000 2013
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/rooms/new" for 127.0.0.1 at Fri Feb 22 22:35:39 +0000 2013
+Processing by RoomsController#new as HTML
+  Rendered rooms/_form.html.erb (9.2ms)
+  Rendered rooms/new.html.erb within layouts/application (20.9ms)
+Completed 200 OK in 70ms (Views: 56.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at Fri Feb 22 22:35:39 +0000 2013
+Served asset /application.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/bookings.css?body=1" for 127.0.0.1 at Fri Feb 22 22:35:39 +0000 2013
+Served asset /bookings.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/hosts.css?body=1" for 127.0.0.1 at Fri Feb 22 22:35:39 +0000 2013
+Served asset /hosts.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/rooms.css?body=1" for 127.0.0.1 at Fri Feb 22 22:35:39 +0000 2013
+Served asset /rooms.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at Fri Feb 22 22:35:39 +0000 2013
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at Fri Feb 22 22:35:39 +0000 2013
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at Fri Feb 22 22:35:39 +0000 2013
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bookings.js?body=1" for 127.0.0.1 at Fri Feb 22 22:35:39 +0000 2013
+Served asset /bookings.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/hosts.js?body=1" for 127.0.0.1 at Fri Feb 22 22:35:39 +0000 2013
+Served asset /hosts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/rooms.js?body=1" for 127.0.0.1 at Fri Feb 22 22:35:39 +0000 2013
+Served asset /rooms.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at Fri Feb 22 22:35:39 +0000 2013
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/bookings" for 127.0.0.1 at Fri Feb 22 22:35:46 +0000 2013
+Processing by BookingsController#index as HTML
+  [1m[36mBooking Load (0.8ms)[0m  [1mSELECT "bookings".* FROM "bookings" [0m
+  Rendered bookings/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 46ms (Views: 39.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at Fri Feb 22 22:35:47 +0000 2013
+Served asset /application.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/bookings.css?body=1" for 127.0.0.1 at Fri Feb 22 22:35:47 +0000 2013
+Served asset /bookings.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at Fri Feb 22 22:35:47 +0000 2013
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at Fri Feb 22 22:35:47 +0000 2013
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/rooms.css?body=1" for 127.0.0.1 at Fri Feb 22 22:35:47 +0000 2013
+Served asset /rooms.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/hosts.css?body=1" for 127.0.0.1 at Fri Feb 22 22:35:47 +0000 2013
+Served asset /hosts.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at Fri Feb 22 22:35:47 +0000 2013
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bookings.js?body=1" for 127.0.0.1 at Fri Feb 22 22:35:47 +0000 2013
+Served asset /bookings.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/hosts.js?body=1" for 127.0.0.1 at Fri Feb 22 22:35:47 +0000 2013
+Served asset /hosts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/rooms.js?body=1" for 127.0.0.1 at Fri Feb 22 22:35:47 +0000 2013
+Served asset /rooms.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at Fri Feb 22 22:35:47 +0000 2013
+Served asset /application.js - 304 Not Modified (1ms)
+Connecting to database specified by database.yml
+  [1m[36m (1.6ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateHosts (20130222223230)
+Migrating to CreateRooms (20130222223320)
+Migrating to CreateBookings (20130222223417)
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (1.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+
+
+Started GET "/bookings" for 127.0.0.1 at Fri Feb 22 22:51:55 +0000 2013
+DEPRECATION WARNING: Calling set_primary_key is deprecated. Please use `self.primary_key = 'the_name'` instead. (called from /media/Vista/sajeev/railsproj/p16/app/models/booking.rb:5)
+Processing by BookingsController#index as HTML
+  [1m[35mBooking Load (0.8ms)[0m  SELECT "bookings".* FROM "bookings" 
+  Rendered bookings/index.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 82ms (Views: 63.7ms | ActiveRecord: 13.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at Fri Feb 22 22:51:56 +0000 2013
+Served asset /application.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/bookings.css?body=1" for 127.0.0.1 at Fri Feb 22 22:51:56 +0000 2013
+Served asset /bookings.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/hosts.css?body=1" for 127.0.0.1 at Fri Feb 22 22:51:56 +0000 2013
+Served asset /hosts.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/rooms.css?body=1" for 127.0.0.1 at Fri Feb 22 22:51:56 +0000 2013
+Served asset /rooms.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at Fri Feb 22 22:51:56 +0000 2013
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at Fri Feb 22 22:51:56 +0000 2013
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at Fri Feb 22 22:51:56 +0000 2013
+Served asset /jquery_ujs.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/bookings.js?body=1" for 127.0.0.1 at Fri Feb 22 22:51:56 +0000 2013
+Served asset /bookings.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/hosts.js?body=1" for 127.0.0.1 at Fri Feb 22 22:51:56 +0000 2013
+Served asset /hosts.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/rooms.js?body=1" for 127.0.0.1 at Fri Feb 22 22:51:56 +0000 2013
+Served asset /rooms.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at Fri Feb 22 22:51:56 +0000 2013
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/" for 127.0.0.1 at Fri Feb 22 22:52:02 +0000 2013
+DEPRECATION WARNING: Calling set_primary_key is deprecated. Please use `self.primary_key = 'the_name'` instead. (called from /media/Vista/sajeev/railsproj/p16/app/models/host.rb:4)
+Processing by HostsController#index as HTML
+  [1m[36mHost Load (0.8ms)[0m  [1mSELECT "hosts".* FROM "hosts" [0m
+  Rendered hosts/index.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 58ms (Views: 52.3ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at Fri Feb 22 22:52:02 +0000 2013
+Served asset /application.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/bookings.css?body=1" for 127.0.0.1 at Fri Feb 22 22:52:02 +0000 2013
+Served asset /bookings.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/hosts.css?body=1" for 127.0.0.1 at Fri Feb 22 22:52:02 +0000 2013
+Served asset /hosts.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at Fri Feb 22 22:52:02 +0000 2013
+Served asset /scaffolds.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/rooms.css?body=1" for 127.0.0.1 at Fri Feb 22 22:52:02 +0000 2013
+Served asset /rooms.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at Fri Feb 22 22:52:02 +0000 2013
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at Fri Feb 22 22:52:02 +0000 2013
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bookings.js?body=1" for 127.0.0.1 at Fri Feb 22 22:52:02 +0000 2013
+Served asset /bookings.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/hosts.js?body=1" for 127.0.0.1 at Fri Feb 22 22:52:02 +0000 2013
+Served asset /hosts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/rooms.js?body=1" for 127.0.0.1 at Fri Feb 22 22:52:02 +0000 2013
+Served asset /rooms.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at Fri Feb 22 22:52:02 +0000 2013
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started POST "/hosts/import" for 127.0.0.1 at Fri Feb 22 22:52:10 +0000 2013
+Processing by HostsController#import as HTML
+  Parameters: {"utf8"=>"✓", "file"=>#<ActionDispatch::Http::UploadedFile:0xb5d869d0 @tempfile=#<File:/tmp/RackMultipart20130222-24239-n46nhb-0>, @content_type="text/csv", @original_filename="hosts-small.csv", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"hosts-small.csv\"\r\nContent-Type: text/csv\r\n">, "commit"=>"Import", "authenticity_token"=>"ebYzPlcelz04nnRnPwquWnDlJjLbMXGxegNm8TCEauI="}
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mHost Exists (1.6ms)[0m  [1mSELECT 1 AS one FROM "hosts" WHERE "hosts"."ref" = 'host#1' LIMIT 1[0m
+  [1m[35mSQL (14.8ms)[0m  INSERT INTO "hosts" ("address", "created_at", "id", "name", "ref", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["address", "1 Camden Street"], ["created_at", Fri, 22 Feb 2013 22:52:10 UTC +00:00], ["id", nil], ["name", "Mr Host 1"], ["ref", "host#1"], ["updated_at", Fri, 22 Feb 2013 22:52:10 UTC +00:00]]
+  [1m[36m (193.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mHost Exists (1.9ms)[0m  [1mSELECT 1 AS one FROM "hosts" WHERE "hosts"."ref" = 'host#2' LIMIT 1[0m
+  [1m[35mSQL (4.1ms)[0m  INSERT INTO "hosts" ("address", "created_at", "id", "name", "ref", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["address", "2 Camden Street"], ["created_at", Fri, 22 Feb 2013 22:52:10 UTC +00:00], ["id", nil], ["name", "Mr Host 2"], ["ref", "host#2"], ["updated_at", Fri, 22 Feb 2013 22:52:10 UTC +00:00]]
+  [1m[36m (146.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mHost Exists (1.7ms)[0m  [1mSELECT 1 AS one FROM "hosts" WHERE "hosts"."ref" = 'host#3' LIMIT 1[0m
+  [1m[35mSQL (3.3ms)[0m  INSERT INTO "hosts" ("address", "created_at", "id", "name", "ref", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["address", "3 Camden Street"], ["created_at", Fri, 22 Feb 2013 22:52:10 UTC +00:00], ["id", nil], ["name", "Mr Host 3"], ["ref", "host#3"], ["updated_at", Fri, 22 Feb 2013 22:52:10 UTC +00:00]]
+  [1m[36m (126.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/hosts
+Completed 302 Found in 644ms (ActiveRecord: 493.5ms)
+
+
+Started GET "/hosts" for 127.0.0.1 at Fri Feb 22 22:52:11 +0000 2013
+Processing by HostsController#index as HTML
+  [1m[35mHost Load (1.1ms)[0m  SELECT "hosts".* FROM "hosts" 
+  Rendered hosts/index.html.erb within layouts/application (15.1ms)
+Completed 200 OK in 60ms (Views: 56.4ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/bookings.css?body=1" for 127.0.0.1 at Fri Feb 22 22:52:11 +0000 2013
+Served asset /bookings.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at Fri Feb 22 22:52:11 +0000 2013
+Served asset /application.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/hosts.css?body=1" for 127.0.0.1 at Fri Feb 22 22:52:11 +0000 2013
+Served asset /hosts.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at Fri Feb 22 22:52:11 +0000 2013
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/rooms.css?body=1" for 127.0.0.1 at Fri Feb 22 22:52:11 +0000 2013
+Served asset /rooms.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at Fri Feb 22 22:52:11 +0000 2013
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at Fri Feb 22 22:52:11 +0000 2013
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bookings.js?body=1" for 127.0.0.1 at Fri Feb 22 22:52:11 +0000 2013
+Served asset /bookings.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/hosts.js?body=1" for 127.0.0.1 at Fri Feb 22 22:52:11 +0000 2013
+Served asset /hosts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/rooms.js?body=1" for 127.0.0.1 at Fri Feb 22 22:52:11 +0000 2013
+Served asset /rooms.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at Fri Feb 22 22:52:11 +0000 2013
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/rooms" for 127.0.0.1 at Fri Feb 22 22:52:23 +0000 2013
+DEPRECATION WARNING: Calling set_primary_key is deprecated. Please use `self.primary_key = 'the_name'` instead. (called from /media/Vista/sajeev/railsproj/p16/app/models/room.rb:5)
+Processing by RoomsController#index as HTML
+  [1m[36mRoom Load (0.8ms)[0m  [1mSELECT "rooms".* FROM "rooms" [0m
+  Rendered rooms/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 53ms (Views: 47.1ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at Fri Feb 22 22:52:23 +0000 2013
+Served asset /application.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/bookings.css?body=1" for 127.0.0.1 at Fri Feb 22 22:52:23 +0000 2013
+Served asset /bookings.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/hosts.css?body=1" for 127.0.0.1 at Fri Feb 22 22:52:23 +0000 2013
+Served asset /hosts.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/rooms.css?body=1" for 127.0.0.1 at Fri Feb 22 22:52:23 +0000 2013
+Served asset /rooms.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at Fri Feb 22 22:52:23 +0000 2013
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at Fri Feb 22 22:52:23 +0000 2013
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at Fri Feb 22 22:52:23 +0000 2013
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bookings.js?body=1" for 127.0.0.1 at Fri Feb 22 22:52:23 +0000 2013
+Served asset /bookings.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/hosts.js?body=1" for 127.0.0.1 at Fri Feb 22 22:52:23 +0000 2013
+Served asset /hosts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/rooms.js?body=1" for 127.0.0.1 at Fri Feb 22 22:52:23 +0000 2013
+Served asset /rooms.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at Fri Feb 22 22:52:23 +0000 2013
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started POST "/rooms/import" for 127.0.0.1 at Fri Feb 22 22:52:30 +0000 2013
+Processing by RoomsController#import as HTML
+  Parameters: {"utf8"=>"✓", "file"=>#<ActionDispatch::Http::UploadedFile:0xb5c7bc48 @tempfile=#<File:/tmp/RackMultipart20130222-24239-1qyynus-0>, @content_type="text/csv", @original_filename="room-ssmall.csv", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"room-ssmall.csv\"\r\nContent-Type: text/csv\r\n">, "commit"=>"Import", "authenticity_token"=>"ebYzPlcelz04nnRnPwquWnDlJjLbMXGxegNm8TCEauI="}
+Completed 500 Internal Server Error in 2ms
+
+ActiveModel::MassAssignmentSecurity::Error (Can't mass-assign protected attributes: host_id):
+  app/models/room.rb:19:in `import'
+  app/models/room.rb:15:in `import'
+  app/controllers/rooms_controller.rb:85:in `import'
+
+
+  Rendered /var/lib/gems/1.8/gems/actionpack-3.2.11/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.4ms)
+  Rendered /var/lib/gems/1.8/gems/actionpack-3.2.11/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.8ms)
+  Rendered /var/lib/gems/1.8/gems/actionpack-3.2.11/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (16.1ms)
+
+
+Started POST "/rooms/import" for 127.0.0.1 at Fri Feb 22 22:53:30 +0000 2013
+DEPRECATION WARNING: Calling set_primary_key is deprecated. Please use `self.primary_key = 'the_name'` instead. (called from /media/Vista/sajeev/railsproj/p16/app/models/room.rb:5)
+Processing by RoomsController#import as HTML
+  Parameters: {"utf8"=>"✓", "file"=>#<ActionDispatch::Http::UploadedFile:0xb5f5b044 @tempfile=#<File:/tmp/RackMultipart20130222-24239-gq8vu9-0>, @content_type="text/csv", @original_filename="room-ssmall.csv", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"room-ssmall.csv\"\r\nContent-Type: text/csv\r\n">, "commit"=>"Import", "authenticity_token"=>"ebYzPlcelz04nnRnPwquWnDlJjLbMXGxegNm8TCEauI="}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mRoom Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "rooms" WHERE "rooms"."ref" = 'room#1' LIMIT 1[0m
+  [1m[35mSQL (2.4ms)[0m  INSERT INTO "rooms" ("capacity", "created_at", "host_ref", "id", "ref", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["capacity", 2], ["created_at", Fri, 22 Feb 2013 22:53:30 UTC +00:00], ["host_ref", "host#1"], ["id", nil], ["ref", "room#1"], ["updated_at", Fri, 22 Feb 2013 22:53:30 UTC +00:00]]
+  [1m[36m (257.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mRoom Exists (1.8ms)[0m  [1mSELECT 1 AS one FROM "rooms" WHERE "rooms"."ref" = 'room#2' LIMIT 1[0m
+  [1m[35mSQL (4.1ms)[0m  INSERT INTO "rooms" ("capacity", "created_at", "host_ref", "id", "ref", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["capacity", 2], ["created_at", Fri, 22 Feb 2013 22:53:30 UTC +00:00], ["host_ref", "host#1"], ["id", nil], ["ref", "room#2"], ["updated_at", Fri, 22 Feb 2013 22:53:30 UTC +00:00]]
+  [1m[36m (148.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mRoom Exists (1.3ms)[0m  [1mSELECT 1 AS one FROM "rooms" WHERE "rooms"."ref" = 'room#3' LIMIT 1[0m
+  [1m[35mSQL (2.1ms)[0m  INSERT INTO "rooms" ("capacity", "created_at", "host_ref", "id", "ref", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["capacity", 2], ["created_at", Fri, 22 Feb 2013 22:53:30 UTC +00:00], ["host_ref", "host#2"], ["id", nil], ["ref", "room#3"], ["updated_at", Fri, 22 Feb 2013 22:53:30 UTC +00:00]]
+  [1m[36m (163.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mRoom Exists (1.4ms)[0m  [1mSELECT 1 AS one FROM "rooms" WHERE "rooms"."ref" = 'room#4' LIMIT 1[0m
+  [1m[35mSQL (2.2ms)[0m  INSERT INTO "rooms" ("capacity", "created_at", "host_ref", "id", "ref", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["capacity", 2], ["created_at", Fri, 22 Feb 2013 22:53:30 UTC +00:00], ["host_ref", "host#2"], ["id", nil], ["ref", "room#4"], ["updated_at", Fri, 22 Feb 2013 22:53:30 UTC +00:00]]
+  [1m[36m (151.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mRoom Exists (1.7ms)[0m  [1mSELECT 1 AS one FROM "rooms" WHERE "rooms"."ref" = 'room#5' LIMIT 1[0m
+  [1m[35mSQL (3.9ms)[0m  INSERT INTO "rooms" ("capacity", "created_at", "host_ref", "id", "ref", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["capacity", 2], ["created_at", Fri, 22 Feb 2013 22:53:31 UTC +00:00], ["host_ref", "host#3"], ["id", nil], ["ref", "room#5"], ["updated_at", Fri, 22 Feb 2013 22:53:31 UTC +00:00]]
+  [1m[36m (149.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/rooms
+Completed 302 Found in 963ms (ActiveRecord: 894.1ms)
+
+
+Started GET "/rooms" for 127.0.0.1 at Fri Feb 22 22:53:31 +0000 2013
+Processing by RoomsController#index as HTML
+  [1m[35mRoom Load (1.4ms)[0m  SELECT "rooms".* FROM "rooms" 
+  Rendered rooms/index.html.erb within layouts/application (12.3ms)
+Completed 200 OK in 76ms (Views: 70.8ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at Fri Feb 22 22:53:31 +0000 2013
+Served asset /application.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/bookings.css?body=1" for 127.0.0.1 at Fri Feb 22 22:53:31 +0000 2013
+Served asset /bookings.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/hosts.css?body=1" for 127.0.0.1 at Fri Feb 22 22:53:31 +0000 2013
+Served asset /hosts.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/rooms.css?body=1" for 127.0.0.1 at Fri Feb 22 22:53:31 +0000 2013
+Served asset /rooms.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at Fri Feb 22 22:53:31 +0000 2013
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at Fri Feb 22 22:53:31 +0000 2013
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at Fri Feb 22 22:53:31 +0000 2013
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bookings.js?body=1" for 127.0.0.1 at Fri Feb 22 22:53:31 +0000 2013
+Served asset /bookings.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/hosts.js?body=1" for 127.0.0.1 at Fri Feb 22 22:53:31 +0000 2013
+Served asset /hosts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/rooms.js?body=1" for 127.0.0.1 at Fri Feb 22 22:53:31 +0000 2013
+Served asset /rooms.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at Fri Feb 22 22:53:31 +0000 2013
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/bookings" for 127.0.0.1 at Fri Feb 22 22:53:41 +0000 2013
+DEPRECATION WARNING: Calling set_primary_key is deprecated. Please use `self.primary_key = 'the_name'` instead. (called from /media/Vista/sajeev/railsproj/p16/app/models/booking.rb:5)
+Processing by BookingsController#index as HTML
+  [1m[36mBooking Load (0.8ms)[0m  [1mSELECT "bookings".* FROM "bookings" [0m
+  Rendered bookings/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 68ms (Views: 62.2ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at Fri Feb 22 22:53:41 +0000 2013
+Served asset /application.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/bookings.css?body=1" for 127.0.0.1 at Fri Feb 22 22:53:41 +0000 2013
+Served asset /bookings.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/hosts.css?body=1" for 127.0.0.1 at Fri Feb 22 22:53:41 +0000 2013
+Served asset /hosts.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/rooms.css?body=1" for 127.0.0.1 at Fri Feb 22 22:53:41 +0000 2013
+Served asset /rooms.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at Fri Feb 22 22:53:41 +0000 2013
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at Fri Feb 22 22:53:41 +0000 2013
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at Fri Feb 22 22:53:41 +0000 2013
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bookings.js?body=1" for 127.0.0.1 at Fri Feb 22 22:53:41 +0000 2013
+Served asset /bookings.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/hosts.js?body=1" for 127.0.0.1 at Fri Feb 22 22:53:42 +0000 2013
+Served asset /hosts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/rooms.js?body=1" for 127.0.0.1 at Fri Feb 22 22:53:42 +0000 2013
+Served asset /rooms.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at Fri Feb 22 22:53:42 +0000 2013
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started POST "/bookings/import" for 127.0.0.1 at Fri Feb 22 22:53:48 +0000 2013
+Processing by BookingsController#import as HTML
+  Parameters: {"utf8"=>"✓", "file"=>#<ActionDispatch::Http::UploadedFile:0xb5c641ec @tempfile=#<File:/tmp/RackMultipart20130222-24239-2l4mcn-0>, @content_type="text/csv", @original_filename="booking-small.csv", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"booking-small.csv\"\r\nContent-Type: text/csv\r\n">, "commit"=>"Import", "authenticity_token"=>"ebYzPlcelz04nnRnPwquWnDlJjLbMXGxegNm8TCEauI="}
+Completed 500 Internal Server Error in 3ms
+
+ActiveModel::MassAssignmentSecurity::Error (Can't mass-assign protected attributes: room_id):
+  app/models/booking.rb:18:in `import'
+  app/models/booking.rb:14:in `import'
+  app/controllers/bookings_controller.rb:85:in `import'
+
+
+  Rendered /var/lib/gems/1.8/gems/actionpack-3.2.11/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.6ms)
+  Rendered /var/lib/gems/1.8/gems/actionpack-3.2.11/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.9ms)
+  Rendered /var/lib/gems/1.8/gems/actionpack-3.2.11/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (28.0ms)
+
+
+Started POST "/bookings/import" for 127.0.0.1 at Fri Feb 22 22:54:05 +0000 2013
+DEPRECATION WARNING: Calling set_primary_key is deprecated. Please use `self.primary_key = 'the_name'` instead. (called from /media/Vista/sajeev/railsproj/p16/app/models/booking.rb:5)
+Processing by BookingsController#import as HTML
+  Parameters: {"utf8"=>"✓", "file"=>#<ActionDispatch::Http::UploadedFile:0xb5f43048 @tempfile=#<File:/tmp/RackMultipart20130222-24239-8y2ioc-0>, @content_type="text/csv", @original_filename="booking-small.csv", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"booking-small.csv\"\r\nContent-Type: text/csv\r\n">, "commit"=>"Import", "authenticity_token"=>"ebYzPlcelz04nnRnPwquWnDlJjLbMXGxegNm8TCEauI="}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mBooking Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "bookings" WHERE "bookings"."ref" = 'b#1' LIMIT 1[0m
+  [1m[35mSQL (2.8ms)[0m  INSERT INTO "bookings" ("created_at", "end_date", "id", "number_of_guests", "ref", "room_ref", "start_date", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Fri, 22 Feb 2013 22:54:05 UTC +00:00], ["end_date", Fri, 01 Jun 2012], ["id", nil], ["number_of_guests", 2012], ["ref", "b#1"], ["room_ref", "room#1"], ["start_date", Fri, 01 Jun 2012], ["updated_at", Fri, 22 Feb 2013 22:54:05 UTC +00:00]]
+  [1m[36m (203.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mBooking Exists (1.6ms)[0m  [1mSELECT 1 AS one FROM "bookings" WHERE "bookings"."ref" = 'b#2' LIMIT 1[0m
+  [1m[35mSQL (4.8ms)[0m  INSERT INTO "bookings" ("created_at", "end_date", "id", "number_of_guests", "ref", "room_ref", "start_date", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Fri, 22 Feb 2013 22:54:05 UTC +00:00], ["end_date", Fri, 01 Jun 2012], ["id", nil], ["number_of_guests", 2012], ["ref", "b#2"], ["room_ref", "room#3"], ["start_date", Fri, 01 Jun 2012], ["updated_at", Fri, 22 Feb 2013 22:54:05 UTC +00:00]]
+  [1m[36m (155.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mBooking Exists (1.6ms)[0m  [1mSELECT 1 AS one FROM "bookings" WHERE "bookings"."ref" = 'b#3' LIMIT 1[0m
+  [1m[35mSQL (5.6ms)[0m  INSERT INTO "bookings" ("created_at", "end_date", "id", "number_of_guests", "ref", "room_ref", "start_date", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Fri, 22 Feb 2013 22:54:06 UTC +00:00], ["end_date", Fri, 01 Jun 2012], ["id", nil], ["number_of_guests", 2012], ["ref", "b#3"], ["room_ref", "room#5"], ["start_date", Fri, 01 Jun 2012], ["updated_at", Fri, 22 Feb 2013 22:54:06 UTC +00:00]]
+  [1m[36m (129.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mBooking Exists (1.6ms)[0m  [1mSELECT 1 AS one FROM "bookings" WHERE "bookings"."ref" = 'b#4' LIMIT 1[0m
+  [1m[35mSQL (4.8ms)[0m  INSERT INTO "bookings" ("created_at", "end_date", "id", "number_of_guests", "ref", "room_ref", "start_date", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Fri, 22 Feb 2013 22:54:06 UTC +00:00], ["end_date", Fri, 01 Jun 2012], ["id", nil], ["number_of_guests", 2012], ["ref", "b#4"], ["room_ref", "room#7"], ["start_date", Fri, 01 Jun 2012], ["updated_at", Fri, 22 Feb 2013 22:54:06 UTC +00:00]]
+  [1m[36m (146.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mBooking Exists (1.7ms)[0m  [1mSELECT 1 AS one FROM "bookings" WHERE "bookings"."ref" = 'b#5' LIMIT 1[0m
+  [1m[35mSQL (5.3ms)[0m  INSERT INTO "bookings" ("created_at", "end_date", "id", "number_of_guests", "ref", "room_ref", "start_date", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Fri, 22 Feb 2013 22:54:06 UTC +00:00], ["end_date", Fri, 01 Jun 2012], ["id", nil], ["number_of_guests", 2012], ["ref", "b#5"], ["room_ref", "room#9"], ["start_date", Fri, 01 Jun 2012], ["updated_at", Fri, 22 Feb 2013 22:54:06 UTC +00:00]]
+  [1m[36m (134.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mBooking Exists (1.5ms)[0m  [1mSELECT 1 AS one FROM "bookings" WHERE "bookings"."ref" = 'b#6' LIMIT 1[0m
+  [1m[35mSQL (2.6ms)[0m  INSERT INTO "bookings" ("created_at", "end_date", "id", "number_of_guests", "ref", "room_ref", "start_date", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Fri, 22 Feb 2013 22:54:06 UTC +00:00], ["end_date", Fri, 01 Jun 2012], ["id", nil], ["number_of_guests", 2012], ["ref", "b#6"], ["room_ref", "room#11"], ["start_date", Fri, 01 Jun 2012], ["updated_at", Fri, 22 Feb 2013 22:54:06 UTC +00:00]]
+  [1m[36m (149.8ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/bookings
+Completed 302 Found in 1055ms (ActiveRecord: 956.9ms)
+
+
+Started GET "/bookings" for 127.0.0.1 at Fri Feb 22 22:54:06 +0000 2013
+Processing by BookingsController#index as HTML
+  [1m[35mBooking Load (1.7ms)[0m  SELECT "bookings".* FROM "bookings" 
+  Rendered bookings/index.html.erb within layouts/application (22.2ms)
+Completed 200 OK in 94ms (Views: 87.7ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at Fri Feb 22 22:54:07 +0000 2013
+Served asset /application.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/bookings.css?body=1" for 127.0.0.1 at Fri Feb 22 22:54:07 +0000 2013
+Served asset /bookings.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/hosts.css?body=1" for 127.0.0.1 at Fri Feb 22 22:54:07 +0000 2013
+Served asset /hosts.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/rooms.css?body=1" for 127.0.0.1 at Fri Feb 22 22:54:07 +0000 2013
+Served asset /rooms.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at Fri Feb 22 22:54:07 +0000 2013
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at Fri Feb 22 22:54:07 +0000 2013
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at Fri Feb 22 22:54:07 +0000 2013
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bookings.js?body=1" for 127.0.0.1 at Fri Feb 22 22:54:07 +0000 2013
+Served asset /bookings.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/hosts.js?body=1" for 127.0.0.1 at Fri Feb 22 22:54:07 +0000 2013
+Served asset /hosts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/rooms.js?body=1" for 127.0.0.1 at Fri Feb 22 22:54:07 +0000 2013
+Served asset /rooms.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at Fri Feb 22 22:54:07 +0000 2013
+Served asset /application.js - 304 Not Modified (1ms)
+Connecting to database specified by database.yml
+DEPRECATION WARNING: Calling set_primary_key is deprecated. Please use `self.primary_key = 'the_name'` instead. (called from /media/Vista/sajeev/railsproj/p16/app/models/host.rb:4)
+DEPRECATION WARNING: Calling set_primary_key is deprecated. Please use `self.primary_key = 'the_name'` instead. (called from /media/Vista/sajeev/railsproj/p16/app/models/room.rb:5)
+DEPRECATION WARNING: Calling set_primary_key is deprecated. Please use `self.primary_key = 'the_name'` instead. (called from /media/Vista/sajeev/railsproj/p16/app/models/booking.rb:5)
+
+
+Started GET "/bookings" for 127.0.0.1 at Fri Feb 22 23:04:22 +0000 2013
+DEPRECATION WARNING: Calling set_primary_key is deprecated. Please use `self.primary_key = 'the_name'` instead. (called from /media/Vista/sajeev/railsproj/p16/app/models/booking.rb:5)
+Processing by BookingsController#index as HTML
+  [1m[36mBooking Load (0.9ms)[0m  [1mSELECT "bookings".* FROM "bookings" [0m
+  Rendered bookings/index.html.erb within layouts/application (17.6ms)
+Completed 200 OK in 72ms (Views: 53.5ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at Fri Feb 22 23:04:22 +0000 2013
+Served asset /application.css - 304 Not Modified (6ms)
+
+
+Started GET "/assets/bookings.css?body=1" for 127.0.0.1 at Fri Feb 22 23:04:22 +0000 2013
+Served asset /bookings.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/hosts.css?body=1" for 127.0.0.1 at Fri Feb 22 23:04:22 +0000 2013
+Served asset /hosts.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/rooms.css?body=1" for 127.0.0.1 at Fri Feb 22 23:04:23 +0000 2013
+Served asset /rooms.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at Fri Feb 22 23:04:23 +0000 2013
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at Fri Feb 22 23:04:23 +0000 2013
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at Fri Feb 22 23:04:23 +0000 2013
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bookings.js?body=1" for 127.0.0.1 at Fri Feb 22 23:04:23 +0000 2013
+Served asset /bookings.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/hosts.js?body=1" for 127.0.0.1 at Fri Feb 22 23:04:23 +0000 2013
+Served asset /hosts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/rooms.js?body=1" for 127.0.0.1 at Fri Feb 22 23:04:23 +0000 2013
+Served asset /rooms.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at Fri Feb 22 23:04:23 +0000 2013
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/hosts" for 127.0.0.1 at Fri Feb 22 23:04:30 +0000 2013
+DEPRECATION WARNING: Calling set_primary_key is deprecated. Please use `self.primary_key = 'the_name'` instead. (called from /media/Vista/sajeev/railsproj/p16/app/models/host.rb:4)
+Processing by HostsController#index as HTML
+  [1m[35mHost Load (0.8ms)[0m  SELECT "hosts".* FROM "hosts" 
+  Rendered hosts/index.html.erb within layouts/application (16.5ms)
+Completed 200 OK in 87ms (Views: 71.7ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at Fri Feb 22 23:04:30 +0000 2013
+Served asset /application.css - 304 Not Modified (6ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at Fri Feb 22 23:04:30 +0000 2013
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at Fri Feb 22 23:04:30 +0000 2013
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/hosts.css?body=1" for 127.0.0.1 at Fri Feb 22 23:04:30 +0000 2013
+Served asset /hosts.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/rooms.css?body=1" for 127.0.0.1 at Fri Feb 22 23:04:30 +0000 2013
+Served asset /rooms.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bookings.css?body=1" for 127.0.0.1 at Fri Feb 22 23:04:30 +0000 2013
+Served asset /bookings.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at Fri Feb 22 23:04:31 +0000 2013
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bookings.js?body=1" for 127.0.0.1 at Fri Feb 22 23:04:31 +0000 2013
+Served asset /bookings.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/hosts.js?body=1" for 127.0.0.1 at Fri Feb 22 23:04:31 +0000 2013
+Served asset /hosts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/rooms.js?body=1" for 127.0.0.1 at Fri Feb 22 23:04:31 +0000 2013
+Served asset /rooms.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at Fri Feb 22 23:04:31 +0000 2013
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/rooms" for 127.0.0.1 at Fri Feb 22 23:04:34 +0000 2013
+DEPRECATION WARNING: Calling set_primary_key is deprecated. Please use `self.primary_key = 'the_name'` instead. (called from /media/Vista/sajeev/railsproj/p16/app/models/room.rb:5)
+Processing by RoomsController#index as HTML
+  [1m[36mRoom Load (0.9ms)[0m  [1mSELECT "rooms".* FROM "rooms" [0m
+  Rendered rooms/index.html.erb within layouts/application (12.2ms)
+Completed 200 OK in 66ms (Views: 51.6ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at Fri Feb 22 23:04:34 +0000 2013
+Served asset /application.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/bookings.css?body=1" for 127.0.0.1 at Fri Feb 22 23:04:34 +0000 2013
+Served asset /bookings.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/hosts.css?body=1" for 127.0.0.1 at Fri Feb 22 23:04:34 +0000 2013
+Served asset /hosts.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at Fri Feb 22 23:04:34 +0000 2013
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/rooms.css?body=1" for 127.0.0.1 at Fri Feb 22 23:04:34 +0000 2013
+Served asset /rooms.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at Fri Feb 22 23:04:35 +0000 2013
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at Fri Feb 22 23:04:35 +0000 2013
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bookings.js?body=1" for 127.0.0.1 at Fri Feb 22 23:04:35 +0000 2013
+Served asset /bookings.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/hosts.js?body=1" for 127.0.0.1 at Fri Feb 22 23:04:35 +0000 2013
+Served asset /hosts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/rooms.js?body=1" for 127.0.0.1 at Fri Feb 22 23:04:35 +0000 2013
+Served asset /rooms.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at Fri Feb 22 23:04:35 +0000 2013
+Served asset /application.js - 304 Not Modified (1ms)
+Connecting to database specified by database.yml
+DEPRECATION WARNING: Calling set_primary_key is deprecated. Please use `self.primary_key = 'the_name'` instead. (called from /media/Vista/sajeev/railsproj/p16/app/models/host.rb:4)
+DEPRECATION WARNING: Calling set_primary_key is deprecated. Please use `self.primary_key = 'the_name'` instead. (called from /media/Vista/sajeev/railsproj/p16/app/models/room.rb:5)
+DEPRECATION WARNING: Calling set_primary_key is deprecated. Please use `self.primary_key = 'the_name'` instead. (called from /media/Vista/sajeev/railsproj/p16/app/models/booking.rb:5)
+
+
+Started GET "/rooms" for 127.0.0.1 at Fri Feb 22 23:20:43 +0000 2013
+Connecting to database specified by database.yml
+DEPRECATION WARNING: Calling set_primary_key is deprecated. Please use `self.primary_key = 'the_name'` instead. (called from /media/Vista/sajeev/railsproj/p17/app/models/room.rb:5)
+Processing by RoomsController#index as HTML
+  [1m[36mRoom Load (1.8ms)[0m  [1mSELECT "rooms".* FROM "rooms" [0m
+  Rendered rooms/index.html.erb within layouts/application (40.1ms)
+Completed 200 OK in 494ms (Views: 271.0ms | ActiveRecord: 19.9ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at Fri Feb 22 23:20:46 +0000 2013
+Served asset /application.css - 304 Not Modified (123ms)
+
+
+Started GET "/assets/bookings.css?body=1" for 127.0.0.1 at Fri Feb 22 23:20:46 +0000 2013
+Served asset /bookings.css - 304 Not Modified (12ms)
+
+
+Started GET "/assets/hosts.css?body=1" for 127.0.0.1 at Fri Feb 22 23:20:46 +0000 2013
+Served asset /hosts.css - 304 Not Modified (8ms)
+
+
+Started GET "/assets/rooms.css?body=1" for 127.0.0.1 at Fri Feb 22 23:20:46 +0000 2013
+Served asset /rooms.css - 304 Not Modified (10ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at Fri Feb 22 23:20:46 +0000 2013
+Served asset /scaffolds.css - 304 Not Modified (11ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at Fri Feb 22 23:20:46 +0000 2013
+Served asset /jquery.js - 304 Not Modified (22ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at Fri Feb 22 23:20:46 +0000 2013
+Served asset /jquery_ujs.js - 304 Not Modified (9ms)
+
+
+Started GET "/assets/bookings.js?body=1" for 127.0.0.1 at Fri Feb 22 23:20:46 +0000 2013
+Served asset /bookings.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/hosts.js?body=1" for 127.0.0.1 at Fri Feb 22 23:20:46 +0000 2013
+Served asset /hosts.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/rooms.js?body=1" for 127.0.0.1 at Fri Feb 22 23:20:46 +0000 2013
+Served asset /rooms.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at Fri Feb 22 23:20:46 +0000 2013
+Served asset /application.js - 304 Not Modified (28ms)
+Connecting to database specified by database.yml
+DEPRECATION WARNING: Calling set_primary_key is deprecated. Please use `self.primary_key = 'the_name'` instead. (called from /media/Vista/sajeev/railsproj/p17/app/models/host.rb:4)
+DEPRECATION WARNING: Calling set_primary_key is deprecated. Please use `self.primary_key = 'the_name'` instead. (called from /media/Vista/sajeev/railsproj/p17/app/models/room.rb:5)
+DEPRECATION WARNING: Calling set_primary_key is deprecated. Please use `self.primary_key = 'the_name'` instead. (called from /media/Vista/sajeev/railsproj/p17/app/models/booking.rb:5)
+
+
+Started GET "/rooms" for 127.0.0.1 at Fri Feb 22 23:21:47 +0000 2013
+Processing by RoomsController#index as HTML
+  [1m[35mRoom Load (1.2ms)[0m  SELECT "rooms".* FROM "rooms" 
+  Rendered rooms/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 52ms (Views: 46.9ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at Fri Feb 22 23:21:47 +0000 2013
+Served asset /application.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/bookings.css?body=1" for 127.0.0.1 at Fri Feb 22 23:21:47 +0000 2013
+Served asset /bookings.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/hosts.css?body=1" for 127.0.0.1 at Fri Feb 22 23:21:47 +0000 2013
+Served asset /hosts.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/rooms.css?body=1" for 127.0.0.1 at Fri Feb 22 23:21:47 +0000 2013
+Served asset /rooms.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at Fri Feb 22 23:21:47 +0000 2013
+Served asset /scaffolds.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at Fri Feb 22 23:21:47 +0000 2013
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at Fri Feb 22 23:21:47 +0000 2013
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bookings.js?body=1" for 127.0.0.1 at Fri Feb 22 23:21:47 +0000 2013
+Served asset /bookings.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/hosts.js?body=1" for 127.0.0.1 at Fri Feb 22 23:21:47 +0000 2013
+Served asset /hosts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/rooms.js?body=1" for 127.0.0.1 at Fri Feb 22 23:21:47 +0000 2013
+Served asset /rooms.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at Fri Feb 22 23:21:47 +0000 2013
+Served asset /application.js - 304 Not Modified (1ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/rooms" for 127.0.0.1 at Fri Feb 22 23:39:19 +0000 2013
+Connecting to database specified by database.yml
+Processing by RoomsController#index as HTML
+  [1m[36mRoom Load (1.8ms)[0m  [1mSELECT "rooms".* FROM "rooms" [0m
+  Rendered rooms/index.html.erb within layouts/application (24.0ms)
+Completed 200 OK in 388ms (Views: 249.6ms | ActiveRecord: 16.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at Fri Feb 22 23:39:22 +0000 2013
+Served asset /application.css - 304 Not Modified (28ms)
+
+
+Started GET "/assets/bookings.css?body=1" for 127.0.0.1 at Fri Feb 22 23:39:22 +0000 2013
+Served asset /bookings.css - 304 Not Modified (12ms)
+
+
+Started GET "/assets/hosts.css?body=1" for 127.0.0.1 at Fri Feb 22 23:39:22 +0000 2013
+Served asset /hosts.css - 304 Not Modified (8ms)
+
+
+Started GET "/assets/rooms.css?body=1" for 127.0.0.1 at Fri Feb 22 23:39:22 +0000 2013
+Served asset /rooms.css - 304 Not Modified (11ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at Fri Feb 22 23:39:22 +0000 2013
+Served asset /scaffolds.css - 304 Not Modified (8ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at Fri Feb 22 23:39:22 +0000 2013
+Served asset /jquery.js - 304 Not Modified (16ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at Fri Feb 22 23:39:22 +0000 2013
+Served asset /jquery_ujs.js - 304 Not Modified (11ms)
+
+
+Started GET "/assets/bookings.js?body=1" for 127.0.0.1 at Fri Feb 22 23:39:22 +0000 2013
+Served asset /bookings.js - 304 Not Modified (9ms)
+
+
+Started GET "/assets/hosts.js?body=1" for 127.0.0.1 at Fri Feb 22 23:39:22 +0000 2013
+Served asset /hosts.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/rooms.js?body=1" for 127.0.0.1 at Fri Feb 22 23:39:22 +0000 2013
+Served asset /rooms.js - 304 Not Modified (7ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at Fri Feb 22 23:39:22 +0000 2013
+Served asset /application.js - 304 Not Modified (32ms)
+
+
+Started GET "/hosts" for 127.0.0.1 at Fri Feb 22 23:39:27 +0000 2013
+Processing by HostsController#index as HTML
+  [1m[35mHost Load (0.9ms)[0m  SELECT "hosts".* FROM "hosts" 
+  Rendered hosts/index.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 46ms (Views: 40.4ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at Fri Feb 22 23:39:27 +0000 2013
+Served asset /application.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at Fri Feb 22 23:39:27 +0000 2013
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at Fri Feb 22 23:39:27 +0000 2013
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/rooms.css?body=1" for 127.0.0.1 at Fri Feb 22 23:39:27 +0000 2013
+Served asset /rooms.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/hosts.css?body=1" for 127.0.0.1 at Fri Feb 22 23:39:27 +0000 2013
+Served asset /hosts.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bookings.css?body=1" for 127.0.0.1 at Fri Feb 22 23:39:27 +0000 2013
+Served asset /bookings.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at Fri Feb 22 23:39:28 +0000 2013
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bookings.js?body=1" for 127.0.0.1 at Fri Feb 22 23:39:28 +0000 2013
+Served asset /bookings.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/hosts.js?body=1" for 127.0.0.1 at Fri Feb 22 23:39:28 +0000 2013
+Served asset /hosts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/rooms.js?body=1" for 127.0.0.1 at Fri Feb 22 23:39:28 +0000 2013
+Served asset /rooms.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at Fri Feb 22 23:39:28 +0000 2013
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started POST "/hosts/import" for 127.0.0.1 at Fri Feb 22 23:39:35 +0000 2013
+Processing by HostsController#import as HTML
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0xb5d9686c @original_filename="hosts-small.csv", @tempfile=#<File:/tmp/RackMultipart20130222-27877-p7vx1h-0>, @headers="Content-Disposition: form-data; name=\"file\"; filename=\"hosts-small.csv\"\r\nContent-Type: text/csv\r\n", @content_type="text/csv">, "commit"=>"Import", "authenticity_token"=>"ebYzPlcelz04nnRnPwquWnDlJjLbMXGxegNm8TCEauI=", "utf8"=>"✓"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mHost Exists (0.8ms)[0m  SELECT 1 AS one FROM "hosts" WHERE "hosts"."ref" = 'host#1' LIMIT 1
+  [1m[36mSQL (8.3ms)[0m  [1mINSERT INTO "hosts" ("address", "created_at", "name", "ref", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["address", "1 Camden Street"], ["created_at", Fri, 22 Feb 2013 23:39:35 UTC +00:00], ["name", "Mr Host 1"], ["ref", "host#1"], ["updated_at", Fri, 22 Feb 2013 23:39:35 UTC +00:00]]
+  [1m[35m (210.7ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mHost Exists (1.9ms)[0m  SELECT 1 AS one FROM "hosts" WHERE "hosts"."ref" = 'host#2' LIMIT 1
+  [1m[36mSQL (5.5ms)[0m  [1mINSERT INTO "hosts" ("address", "created_at", "name", "ref", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["address", "2 Camden Street"], ["created_at", Fri, 22 Feb 2013 23:39:35 UTC +00:00], ["name", "Mr Host 2"], ["ref", "host#2"], ["updated_at", Fri, 22 Feb 2013 23:39:35 UTC +00:00]]
+  [1m[35m (190.4ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mHost Exists (1.7ms)[0m  SELECT 1 AS one FROM "hosts" WHERE "hosts"."ref" = 'host#3' LIMIT 1
+  [1m[36mSQL (3.9ms)[0m  [1mINSERT INTO "hosts" ("address", "created_at", "name", "ref", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["address", "3 Camden Street"], ["created_at", Fri, 22 Feb 2013 23:39:35 UTC +00:00], ["name", "Mr Host 3"], ["ref", "host#3"], ["updated_at", Fri, 22 Feb 2013 23:39:35 UTC +00:00]]
+  [1m[35m (171.3ms)[0m  commit transaction
+Redirected to http://localhost:3000/hosts
+Completed 302 Found in 698ms (ActiveRecord: 594.9ms)
+
+
+Started GET "/hosts" for 127.0.0.1 at Fri Feb 22 23:39:35 +0000 2013
+Processing by HostsController#index as HTML
+  [1m[36mHost Load (1.2ms)[0m  [1mSELECT "hosts".* FROM "hosts" [0m
+  Rendered hosts/index.html.erb within layouts/application (13.9ms)
+Completed 200 OK in 66ms (Views: 62.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at Fri Feb 22 23:39:36 +0000 2013
+Served asset /application.css - 304 Not Modified (11ms)
+
+
+Started GET "/assets/rooms.css?body=1" for 127.0.0.1 at Fri Feb 22 23:39:36 +0000 2013
+Served asset /rooms.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at Fri Feb 22 23:39:36 +0000 2013
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/hosts.css?body=1" for 127.0.0.1 at Fri Feb 22 23:39:36 +0000 2013
+Served asset /hosts.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at Fri Feb 22 23:39:36 +0000 2013
+Served asset /scaffolds.css - 304 Not Modified (5ms)
+
+
+Started GET "/assets/bookings.css?body=1" for 127.0.0.1 at Fri Feb 22 23:39:36 +0000 2013
+Served asset /bookings.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at Fri Feb 22 23:39:36 +0000 2013
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bookings.js?body=1" for 127.0.0.1 at Fri Feb 22 23:39:36 +0000 2013
+Served asset /bookings.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/hosts.js?body=1" for 127.0.0.1 at Fri Feb 22 23:39:36 +0000 2013
+Served asset /hosts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/rooms.js?body=1" for 127.0.0.1 at Fri Feb 22 23:39:36 +0000 2013
+Served asset /rooms.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at Fri Feb 22 23:39:36 +0000 2013
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/rooms" for 127.0.0.1 at Fri Feb 22 23:39:43 +0000 2013
+Processing by RoomsController#index as HTML
+  [1m[35mRoom Load (6.9ms)[0m  SELECT "rooms".* FROM "rooms" 
+  Rendered rooms/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 70ms (Views: 60.7ms | ActiveRecord: 6.9ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at Fri Feb 22 23:39:43 +0000 2013
+Served asset /application.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/bookings.css?body=1" for 127.0.0.1 at Fri Feb 22 23:39:43 +0000 2013
+Served asset /bookings.css - 304 Not Modified (5ms)
+
+
+Started GET "/assets/hosts.css?body=1" for 127.0.0.1 at Fri Feb 22 23:39:43 +0000 2013
+Served asset /hosts.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at Fri Feb 22 23:39:43 +0000 2013
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/rooms.css?body=1" for 127.0.0.1 at Fri Feb 22 23:39:43 +0000 2013
+Served asset /rooms.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at Fri Feb 22 23:39:43 +0000 2013
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at Fri Feb 22 23:39:43 +0000 2013
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bookings.js?body=1" for 127.0.0.1 at Fri Feb 22 23:39:43 +0000 2013
+Served asset /bookings.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/hosts.js?body=1" for 127.0.0.1 at Fri Feb 22 23:39:43 +0000 2013
+Served asset /hosts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/rooms.js?body=1" for 127.0.0.1 at Fri Feb 22 23:39:43 +0000 2013
+Served asset /rooms.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at Fri Feb 22 23:39:43 +0000 2013
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started POST "/rooms/import" for 127.0.0.1 at Fri Feb 22 23:39:52 +0000 2013
+Processing by RoomsController#import as HTML
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0xb5e24d10 @original_filename="room-ssmall.csv", @tempfile=#<File:/tmp/RackMultipart20130222-27877-1qbsz0s-0>, @headers="Content-Disposition: form-data; name=\"file\"; filename=\"room-ssmall.csv\"\r\nContent-Type: text/csv\r\n", @content_type="text/csv">, "commit"=>"Import", "authenticity_token"=>"ebYzPlcelz04nnRnPwquWnDlJjLbMXGxegNm8TCEauI=", "utf8"=>"✓"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mRoom Exists (1.0ms)[0m  SELECT 1 AS one FROM "rooms" WHERE "rooms"."ref" = 'room#1' LIMIT 1
+  [1m[36mSQL (2.2ms)[0m  [1mINSERT INTO "rooms" ("capacity", "created_at", "host_ref", "ref", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["capacity", 2], ["created_at", Fri, 22 Feb 2013 23:39:52 UTC +00:00], ["host_ref", "host#1"], ["ref", "room#1"], ["updated_at", Fri, 22 Feb 2013 23:39:52 UTC +00:00]]
+  [1m[35m (185.2ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mRoom Exists (0.9ms)[0m  SELECT 1 AS one FROM "rooms" WHERE "rooms"."ref" = 'room#2' LIMIT 1
+  [1m[36mSQL (3.0ms)[0m  [1mINSERT INTO "rooms" ("capacity", "created_at", "host_ref", "ref", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["capacity", 2], ["created_at", Fri, 22 Feb 2013 23:39:52 UTC +00:00], ["host_ref", "host#1"], ["ref", "room#2"], ["updated_at", Fri, 22 Feb 2013 23:39:52 UTC +00:00]]
+  [1m[35m (160.1ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mRoom Exists (1.3ms)[0m  SELECT 1 AS one FROM "rooms" WHERE "rooms"."ref" = 'room#3' LIMIT 1
+  [1m[36mSQL (3.1ms)[0m  [1mINSERT INTO "rooms" ("capacity", "created_at", "host_ref", "ref", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["capacity", 2], ["created_at", Fri, 22 Feb 2013 23:39:52 UTC +00:00], ["host_ref", "host#2"], ["ref", "room#3"], ["updated_at", Fri, 22 Feb 2013 23:39:52 UTC +00:00]]
+  [1m[35m (204.6ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mRoom Exists (9.0ms)[0m  SELECT 1 AS one FROM "rooms" WHERE "rooms"."ref" = 'room#4' LIMIT 1
+  [1m[36mSQL (3.0ms)[0m  [1mINSERT INTO "rooms" ("capacity", "created_at", "host_ref", "ref", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["capacity", 2], ["created_at", Fri, 22 Feb 2013 23:39:53 UTC +00:00], ["host_ref", "host#2"], ["ref", "room#4"], ["updated_at", Fri, 22 Feb 2013 23:39:53 UTC +00:00]]
+  [1m[35m (177.0ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mRoom Exists (1.7ms)[0m  SELECT 1 AS one FROM "rooms" WHERE "rooms"."ref" = 'room#5' LIMIT 1
+  [1m[36mSQL (5.5ms)[0m  [1mINSERT INTO "rooms" ("capacity", "created_at", "host_ref", "ref", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["capacity", 2], ["created_at", Fri, 22 Feb 2013 23:39:53 UTC +00:00], ["host_ref", "host#3"], ["ref", "room#5"], ["updated_at", Fri, 22 Feb 2013 23:39:53 UTC +00:00]]
+  [1m[35m (159.6ms)[0m  commit transaction
+Redirected to http://localhost:3000/rooms
+Completed 302 Found in 990ms (ActiveRecord: 918.2ms)
+
+
+Started GET "/rooms" for 127.0.0.1 at Fri Feb 22 23:39:53 +0000 2013
+Processing by RoomsController#index as HTML
+  [1m[36mRoom Load (1.0ms)[0m  [1mSELECT "rooms".* FROM "rooms" [0m
+  Rendered rooms/index.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 61ms (Views: 56.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at Fri Feb 22 23:39:53 +0000 2013
+Served asset /application.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/rooms.css?body=1" for 127.0.0.1 at Fri Feb 22 23:39:53 +0000 2013
+Served asset /rooms.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at Fri Feb 22 23:39:53 +0000 2013
+Served asset /scaffolds.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/hosts.css?body=1" for 127.0.0.1 at Fri Feb 22 23:39:53 +0000 2013
+Served asset /hosts.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bookings.css?body=1" for 127.0.0.1 at Fri Feb 22 23:39:53 +0000 2013
+Served asset /bookings.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at Fri Feb 22 23:39:53 +0000 2013
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at Fri Feb 22 23:39:54 +0000 2013
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bookings.js?body=1" for 127.0.0.1 at Fri Feb 22 23:39:54 +0000 2013
+Served asset /bookings.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/hosts.js?body=1" for 127.0.0.1 at Fri Feb 22 23:39:54 +0000 2013
+Served asset /hosts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/rooms.js?body=1" for 127.0.0.1 at Fri Feb 22 23:39:54 +0000 2013
+Served asset /rooms.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at Fri Feb 22 23:39:54 +0000 2013
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/bookings" for 127.0.0.1 at Fri Feb 22 23:40:00 +0000 2013
+Processing by BookingsController#index as HTML
+  [1m[35mBooking Load (2.1ms)[0m  SELECT "bookings".* FROM "bookings" 
+  Rendered bookings/index.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 90ms (Views: 81.2ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at Fri Feb 22 23:40:01 +0000 2013
+Served asset /application.css - 304 Not Modified (8ms)
+
+
+Started GET "/assets/bookings.css?body=1" for 127.0.0.1 at Fri Feb 22 23:40:01 +0000 2013
+Served asset /bookings.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/rooms.css?body=1" for 127.0.0.1 at Fri Feb 22 23:40:01 +0000 2013
+Served asset /rooms.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/hosts.css?body=1" for 127.0.0.1 at Fri Feb 22 23:40:01 +0000 2013
+Served asset /hosts.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at Fri Feb 22 23:40:01 +0000 2013
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at Fri Feb 22 23:40:01 +0000 2013
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at Fri Feb 22 23:40:01 +0000 2013
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bookings.js?body=1" for 127.0.0.1 at Fri Feb 22 23:40:01 +0000 2013
+Served asset /bookings.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/hosts.js?body=1" for 127.0.0.1 at Fri Feb 22 23:40:01 +0000 2013
+Served asset /hosts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/rooms.js?body=1" for 127.0.0.1 at Fri Feb 22 23:40:01 +0000 2013
+Served asset /rooms.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at Fri Feb 22 23:40:01 +0000 2013
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started POST "/bookings/import" for 127.0.0.1 at Fri Feb 22 23:40:07 +0000 2013
+Processing by BookingsController#import as HTML
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0xb5f8fd80 @original_filename="booking-small.csv", @tempfile=#<File:/tmp/RackMultipart20130222-27877-xt8en9-0>, @headers="Content-Disposition: form-data; name=\"file\"; filename=\"booking-small.csv\"\r\nContent-Type: text/csv\r\n", @content_type="text/csv">, "commit"=>"Import", "authenticity_token"=>"ebYzPlcelz04nnRnPwquWnDlJjLbMXGxegNm8TCEauI=", "utf8"=>"✓"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mBooking Exists (1.8ms)[0m  SELECT 1 AS one FROM "bookings" WHERE "bookings"."ref" = 'b#1' LIMIT 1
+  [1m[36mSQL (2.9ms)[0m  [1mINSERT INTO "bookings" ("created_at", "end_date", "number_of_guests", "ref", "room_ref", "start_date", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Fri, 22 Feb 2013 23:40:07 UTC +00:00], ["end_date", Fri, 01 Jun 2012], ["number_of_guests", 2012], ["ref", "b#1"], ["room_ref", "room#1"], ["start_date", Fri, 01 Jun 2012], ["updated_at", Fri, 22 Feb 2013 23:40:07 UTC +00:00]]
+  [1m[35m (211.2ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mBooking Exists (1.5ms)[0m  SELECT 1 AS one FROM "bookings" WHERE "bookings"."ref" = 'b#2' LIMIT 1
+  [1m[36mSQL (2.6ms)[0m  [1mINSERT INTO "bookings" ("created_at", "end_date", "number_of_guests", "ref", "room_ref", "start_date", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Fri, 22 Feb 2013 23:40:07 UTC +00:00], ["end_date", Fri, 01 Jun 2012], ["number_of_guests", 2012], ["ref", "b#2"], ["room_ref", "room#3"], ["start_date", Fri, 01 Jun 2012], ["updated_at", Fri, 22 Feb 2013 23:40:07 UTC +00:00]]
+  [1m[35m (170.5ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mBooking Exists (1.7ms)[0m  SELECT 1 AS one FROM "bookings" WHERE "bookings"."ref" = 'b#3' LIMIT 1
+  [1m[36mSQL (4.7ms)[0m  [1mINSERT INTO "bookings" ("created_at", "end_date", "number_of_guests", "ref", "room_ref", "start_date", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Fri, 22 Feb 2013 23:40:07 UTC +00:00], ["end_date", Fri, 01 Jun 2012], ["number_of_guests", 2012], ["ref", "b#3"], ["room_ref", "room#5"], ["start_date", Fri, 01 Jun 2012], ["updated_at", Fri, 22 Feb 2013 23:40:07 UTC +00:00]]
+  [1m[35m (202.4ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mBooking Exists (1.6ms)[0m  SELECT 1 AS one FROM "bookings" WHERE "bookings"."ref" = 'b#4' LIMIT 1
+  [1m[36mSQL (5.4ms)[0m  [1mINSERT INTO "bookings" ("created_at", "end_date", "number_of_guests", "ref", "room_ref", "start_date", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Fri, 22 Feb 2013 23:40:07 UTC +00:00], ["end_date", Fri, 01 Jun 2012], ["number_of_guests", 2012], ["ref", "b#4"], ["room_ref", "room#7"], ["start_date", Fri, 01 Jun 2012], ["updated_at", Fri, 22 Feb 2013 23:40:07 UTC +00:00]]
+  [1m[35m (180.0ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mBooking Exists (1.3ms)[0m  SELECT 1 AS one FROM "bookings" WHERE "bookings"."ref" = 'b#5' LIMIT 1
+  [1m[36mSQL (2.7ms)[0m  [1mINSERT INTO "bookings" ("created_at", "end_date", "number_of_guests", "ref", "room_ref", "start_date", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Fri, 22 Feb 2013 23:40:08 UTC +00:00], ["end_date", Fri, 01 Jun 2012], ["number_of_guests", 2012], ["ref", "b#5"], ["room_ref", "room#9"], ["start_date", Fri, 01 Jun 2012], ["updated_at", Fri, 22 Feb 2013 23:40:08 UTC +00:00]]
+  [1m[35m (170.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mBooking Exists (0.8ms)[0m  SELECT 1 AS one FROM "bookings" WHERE "bookings"."ref" = 'b#6' LIMIT 1
+  [1m[36mSQL (2.6ms)[0m  [1mINSERT INTO "bookings" ("created_at", "end_date", "number_of_guests", "ref", "room_ref", "start_date", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Fri, 22 Feb 2013 23:40:08 UTC +00:00], ["end_date", Fri, 01 Jun 2012], ["number_of_guests", 2012], ["ref", "b#6"], ["room_ref", "room#11"], ["start_date", Fri, 01 Jun 2012], ["updated_at", Fri, 22 Feb 2013 23:40:08 UTC +00:00]]
+  [1m[35m (198.5ms)[0m  commit transaction
+Redirected to http://localhost:3000/bookings
+Completed 302 Found in 1258ms (ActiveRecord: 1163.5ms)
+
+
+Started GET "/bookings" for 127.0.0.1 at Fri Feb 22 23:40:08 +0000 2013
+Processing by BookingsController#index as HTML
+  [1m[36mBooking Load (1.3ms)[0m  [1mSELECT "bookings".* FROM "bookings" [0m
+  Rendered bookings/index.html.erb within layouts/application (29.3ms)
+Completed 200 OK in 88ms (Views: 83.6ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at Fri Feb 22 23:40:08 +0000 2013
+Served asset /application.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/bookings.css?body=1" for 127.0.0.1 at Fri Feb 22 23:40:08 +0000 2013
+Served asset /bookings.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/hosts.css?body=1" for 127.0.0.1 at Fri Feb 22 23:40:08 +0000 2013
+Served asset /hosts.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/rooms.css?body=1" for 127.0.0.1 at Fri Feb 22 23:40:08 +0000 2013
+Served asset /rooms.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at Fri Feb 22 23:40:08 +0000 2013
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at Fri Feb 22 23:40:08 +0000 2013
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at Fri Feb 22 23:40:08 +0000 2013
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bookings.js?body=1" for 127.0.0.1 at Fri Feb 22 23:40:08 +0000 2013
+Served asset /bookings.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/hosts.js?body=1" for 127.0.0.1 at Fri Feb 22 23:40:09 +0000 2013
+Served asset /hosts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/rooms.js?body=1" for 127.0.0.1 at Fri Feb 22 23:40:09 +0000 2013
+Served asset /rooms.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at Fri Feb 22 23:40:09 +0000 2013
+Served asset /application.js - 304 Not Modified (1ms)
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+DEPRECATION WARNING: Calling set_primary_key is deprecated. Please use `self.primary_key = 'the_name'` instead. (called from /media/Vista/sajeev/railsproj/p18/app/models/host.rb:4)
+DEPRECATION WARNING: Calling set_primary_key is deprecated. Please use `self.primary_key = 'the_name'` instead. (called from /media/Vista/sajeev/railsproj/p18/app/models/room.rb:5)
+DEPRECATION WARNING: Calling set_primary_key is deprecated. Please use `self.primary_key = 'the_name'` instead. (called from /media/Vista/sajeev/railsproj/p18/app/models/booking.rb:5)
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (1.5ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateHosts (20130222223230)
+Migrating to CreateRooms (20130222223320)
+Migrating to CreateBookings (20130222223417)
+Migrating to AddIndexToHostsRef (20130222235852)
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+Connecting to database specified by database.yml
+  [1m[36m (1.4ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateHosts (20130222223230)
+Migrating to CreateRooms (20130222223320)
+Migrating to CreateBookings (20130222223417)
+Migrating to AddIndexToHostsRef (20130222235852)
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (5.3ms)[0m  CREATE UNIQUE INDEX "index_hosts_on_ref" ON "hosts" ("ref")
+  [1m[36m (1.8ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20130222235852')[0m
+  [1m[35m (177.6ms)[0m  commit transaction
+  [1m[36m (1.6ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (1.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateHosts (20130222223230)
+Migrating to CreateRooms (20130222223320)
+Migrating to CreateBookings (20130222223417)
+Migrating to AddIndexToHostsRef (20130222235852)
+Migrating to AddIndexToRoomsRef (20130223000125)
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (5.4ms)[0m  CREATE UNIQUE INDEX "index_rooms_on_ref" ON "rooms" ("ref")
+  [1m[36m (1.9ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20130223000125')[0m
+  [1m[35m (204.1ms)[0m  commit transaction
+  [1m[36m (2.6ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (1.5ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateHosts (20130222223230)
+Migrating to CreateRooms (20130222223320)
+Migrating to CreateBookings (20130222223417)
+Migrating to AddIndexToHostsRef (20130222235852)
+Migrating to AddIndexToRoomsRef (20130223000125)
+Migrating to AddIndexToBookingsRef (20130223000214)
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (5.3ms)[0m  CREATE UNIQUE INDEX "index_bookings_on_ref" ON "bookings" ("ref")
+  [1m[36m (1.8ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20130223000214')[0m
+  [1m[35m (170.7ms)[0m  commit transaction
+  [1m[36m (1.4ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+
+
+Started GET "/bookings" for 127.0.0.1 at Sat Feb 23 00:03:14 +0000 2013
+Connecting to database specified by database.yml
+DEPRECATION WARNING: Calling set_primary_key is deprecated. Please use `self.primary_key = 'the_name'` instead. (called from /media/Vista/sajeev/railsproj/p19/app/models/booking.rb:5)
+Processing by BookingsController#index as HTML
+  [1m[36mBooking Load (0.8ms)[0m  [1mSELECT "bookings".* FROM "bookings" [0m
+  Rendered bookings/index.html.erb within layouts/application (42.7ms)
+Completed 200 OK in 366ms (Views: 224.6ms | ActiveRecord: 7.9ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at Sat Feb 23 00:03:16 +0000 2013
+Served asset /application.css - 304 Not Modified (131ms)
+
+
+Started GET "/assets/bookings.css?body=1" for 127.0.0.1 at Sat Feb 23 00:03:16 +0000 2013
+Served asset /bookings.css - 304 Not Modified (17ms)
+
+
+Started GET "/assets/hosts.css?body=1" for 127.0.0.1 at Sat Feb 23 00:03:16 +0000 2013
+Served asset /hosts.css - 304 Not Modified (8ms)
+
+
+Started GET "/assets/rooms.css?body=1" for 127.0.0.1 at Sat Feb 23 00:03:16 +0000 2013
+Served asset /rooms.css - 304 Not Modified (10ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at Sat Feb 23 00:03:16 +0000 2013
+Served asset /scaffolds.css - 304 Not Modified (12ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at Sat Feb 23 00:03:17 +0000 2013
+Served asset /jquery.js - 304 Not Modified (18ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at Sat Feb 23 00:03:17 +0000 2013
+Served asset /jquery_ujs.js - 304 Not Modified (7ms)
+
+
+Started GET "/assets/bookings.js?body=1" for 127.0.0.1 at Sat Feb 23 00:03:17 +0000 2013
+Served asset /bookings.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/hosts.js?body=1" for 127.0.0.1 at Sat Feb 23 00:03:17 +0000 2013
+Served asset /hosts.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/rooms.js?body=1" for 127.0.0.1 at Sat Feb 23 00:03:17 +0000 2013
+Served asset /rooms.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at Sat Feb 23 00:03:17 +0000 2013
+Served asset /application.js - 304 Not Modified (27ms)
+Connecting to database specified by database.yml
+DEPRECATION WARNING: Calling set_primary_key is deprecated. Please use `self.primary_key = 'the_name'` instead. (called from /media/Vista/sajeev/railsproj/p19/app/models/host.rb:4)
+DEPRECATION WARNING: Calling set_primary_key is deprecated. Please use `self.primary_key = 'the_name'` instead. (called from /media/Vista/sajeev/railsproj/p19/app/models/room.rb:5)
+DEPRECATION WARNING: Calling set_primary_key is deprecated. Please use `self.primary_key = 'the_name'` instead. (called from /media/Vista/sajeev/railsproj/p19/app/models/booking.rb:5)
+
+
+Started GET "/bookings" for 127.0.0.1 at Sat Feb 23 00:04:46 +0000 2013
+Processing by BookingsController#index as HTML
+  [1m[35mBooking Load (1.2ms)[0m  SELECT "bookings".* FROM "bookings" 
+  Rendered bookings/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 42ms (Views: 37.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at Sat Feb 23 00:04:47 +0000 2013
+Served asset /application.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/bookings.css?body=1" for 127.0.0.1 at Sat Feb 23 00:04:47 +0000 2013
+Served asset /bookings.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/hosts.css?body=1" for 127.0.0.1 at Sat Feb 23 00:04:47 +0000 2013
+Served asset /hosts.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/rooms.css?body=1" for 127.0.0.1 at Sat Feb 23 00:04:47 +0000 2013
+Served asset /rooms.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at Sat Feb 23 00:04:47 +0000 2013
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at Sat Feb 23 00:04:47 +0000 2013
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at Sat Feb 23 00:04:47 +0000 2013
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bookings.js?body=1" for 127.0.0.1 at Sat Feb 23 00:04:47 +0000 2013
+Served asset /bookings.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/hosts.js?body=1" for 127.0.0.1 at Sat Feb 23 00:04:47 +0000 2013
+Served asset /hosts.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/rooms.js?body=1" for 127.0.0.1 at Sat Feb 23 00:04:47 +0000 2013
+Served asset /rooms.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at Sat Feb 23 00:04:47 +0000 2013
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/hosts" for 127.0.0.1 at Sat Feb 23 00:04:55 +0000 2013
+DEPRECATION WARNING: Calling set_primary_key is deprecated. Please use `self.primary_key = 'the_name'` instead. (called from /media/Vista/sajeev/railsproj/p19/app/models/host.rb:4)
+Processing by HostsController#index as HTML
+  [1m[36mHost Load (0.9ms)[0m  [1mSELECT "hosts".* FROM "hosts" [0m
+  Rendered hosts/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 59ms (Views: 53.2ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at Sat Feb 23 00:04:55 +0000 2013
+Served asset /application.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/bookings.css?body=1" for 127.0.0.1 at Sat Feb 23 00:04:55 +0000 2013
+Served asset /bookings.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/hosts.css?body=1" for 127.0.0.1 at Sat Feb 23 00:04:55 +0000 2013
+Served asset /hosts.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at Sat Feb 23 00:04:55 +0000 2013
+Served asset /scaffolds.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/rooms.css?body=1" for 127.0.0.1 at Sat Feb 23 00:04:55 +0000 2013
+Served asset /rooms.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at Sat Feb 23 00:04:55 +0000 2013
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at Sat Feb 23 00:04:55 +0000 2013
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bookings.js?body=1" for 127.0.0.1 at Sat Feb 23 00:04:55 +0000 2013
+Served asset /bookings.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/hosts.js?body=1" for 127.0.0.1 at Sat Feb 23 00:04:55 +0000 2013
+Served asset /hosts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/rooms.js?body=1" for 127.0.0.1 at Sat Feb 23 00:04:55 +0000 2013
+Served asset /rooms.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at Sat Feb 23 00:04:55 +0000 2013
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started POST "/hosts/import" for 127.0.0.1 at Sat Feb 23 00:05:01 +0000 2013
+Processing by HostsController#import as HTML
+  Parameters: {"commit"=>"Import", "file"=>#<ActionDispatch::Http::UploadedFile:0xb6014f58 @original_filename="hosts-small.csv", @tempfile=#<File:/tmp/RackMultipart20130223-28071-tsd9g5-0>, @headers="Content-Disposition: form-data; name=\"file\"; filename=\"hosts-small.csv\"\r\nContent-Type: text/csv\r\n", @content_type="text/csv">, "authenticity_token"=>"ebYzPlcelz04nnRnPwquWnDlJjLbMXGxegNm8TCEauI=", "utf8"=>"✓"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mHost Exists (0.7ms)[0m  [1mSELECT 1 AS one FROM "hosts" WHERE "hosts"."ref" = 'host#1' LIMIT 1[0m
+  [1m[35mSQL (6.6ms)[0m  INSERT INTO "hosts" ("address", "created_at", "id", "name", "ref", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["address", "1 Camden Street"], ["created_at", Sat, 23 Feb 2013 00:05:01 UTC +00:00], ["id", nil], ["name", "Mr Host 1"], ["ref", "host#1"], ["updated_at", Sat, 23 Feb 2013 00:05:01 UTC +00:00]]
+  [1m[36m (149.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mHost Exists (0.8ms)[0m  [1mSELECT 1 AS one FROM "hosts" WHERE "hosts"."ref" = 'host#2' LIMIT 1[0m
+  [1m[35mSQL (2.2ms)[0m  INSERT INTO "hosts" ("address", "created_at", "id", "name", "ref", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["address", "2 Camden Street"], ["created_at", Sat, 23 Feb 2013 00:05:01 UTC +00:00], ["id", nil], ["name", "Mr Host 2"], ["ref", "host#2"], ["updated_at", Sat, 23 Feb 2013 00:05:01 UTC +00:00]]
+  [1m[36m (173.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mHost Exists (1.0ms)[0m  [1mSELECT 1 AS one FROM "hosts" WHERE "hosts"."ref" = 'host#3' LIMIT 1[0m
+  [1m[35mSQL (2.7ms)[0m  INSERT INTO "hosts" ("address", "created_at", "id", "name", "ref", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["address", "3 Camden Street"], ["created_at", Sat, 23 Feb 2013 00:05:01 UTC +00:00], ["id", nil], ["name", "Mr Host 3"], ["ref", "host#3"], ["updated_at", Sat, 23 Feb 2013 00:05:01 UTC +00:00]]
+  [1m[36m (300.2ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/hosts
+Completed 302 Found in 732ms (ActiveRecord: 637.1ms)
+
+
+Started GET "/hosts" for 127.0.0.1 at Sat Feb 23 00:05:02 +0000 2013
+Processing by HostsController#index as HTML
+  [1m[35mHost Load (1.2ms)[0m  SELECT "hosts".* FROM "hosts" 
+  Rendered hosts/index.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 51ms (Views: 47.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at Sat Feb 23 00:05:02 +0000 2013
+Served asset /application.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/hosts.css?body=1" for 127.0.0.1 at Sat Feb 23 00:05:02 +0000 2013
+Served asset /hosts.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bookings.css?body=1" for 127.0.0.1 at Sat Feb 23 00:05:02 +0000 2013
+Served asset /bookings.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at Sat Feb 23 00:05:02 +0000 2013
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/rooms.css?body=1" for 127.0.0.1 at Sat Feb 23 00:05:02 +0000 2013
+Served asset /rooms.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at Sat Feb 23 00:05:02 +0000 2013
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at Sat Feb 23 00:05:02 +0000 2013
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bookings.js?body=1" for 127.0.0.1 at Sat Feb 23 00:05:02 +0000 2013
+Served asset /bookings.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/hosts.js?body=1" for 127.0.0.1 at Sat Feb 23 00:05:02 +0000 2013
+Served asset /hosts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/rooms.js?body=1" for 127.0.0.1 at Sat Feb 23 00:05:02 +0000 2013
+Served asset /rooms.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at Sat Feb 23 00:05:02 +0000 2013
+Served asset /application.js - 304 Not Modified (2ms)

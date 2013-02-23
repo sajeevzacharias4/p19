@@ -1,0 +1,4 @@
+class AddIndexToBookingsRef < ActiveRecord::Migration
+  def change
+  end
+end

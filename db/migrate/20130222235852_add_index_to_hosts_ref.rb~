@@ -1,0 +1,5 @@
+class AddIndexToHostsRef < ActiveRecord::Migration
+  def change
+ad_index :hosts, :ref, :unique=>true
+  end
+end
